@@ -1,0 +1,917 @@
+1511 c_check cs_explorer.c
+dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer
+Test 01_01_01_three_game_pieces (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 16 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - B - - - |
+| - - - - - - - - |
+| - - - - - - H - |
+| - - M - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
+  | - - - - - - - - |
++ | - - - - B - - - |
+  | - - - - - - - - |
+- | - - - - - - - - |
+?                 --
+
++ | - - - - - - H - |
+?               ++
+
+- | - - - - - - - - |
+?                 --
+
++ | - - M - - - - - |
+?       ++
+
+- | - - - - - - - - |
+  | P - - - - - - - |
+...
+
+The input for this test was:
+3
+9 5 6
+0 3 4
+-9 6 2
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '3\n9 5 6\n0 3 4\n-9 6 2' | ./cs_explorer
+Test 01_01_02_game_pieces_off_map (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 16 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
+...
+
+The input for this test was:
+4
+7 -1 -3
+0 -5 9
+-7 8 -1
+0 8 8
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '4\n7 -1 -3\n0 -5 9\n-7 8 -1\n0 8 8' | ./cs_explorer
+Test 01_01_03_game_pieces_invalid_points (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 16 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
+...
+
+The input for this test was:
+4
+-10 3 3
+10 4 4
+-15 2 2
+15 5 5
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '4\n-10 3 3\n10 4 4\n-15 2 2\n15 5 5' | ./cs_explorer
+Test 01_01_04_game_piece_on_player (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 16 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
+...
+
+The input for this test was:
+3
+0 7 0
+-5 7 0
+4 7 0
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '3\n0 7 0\n-5 7 0\n4 7 0' | ./cs_explorer
+Test 01_01_05_game_piece_on_each_other (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 16 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - M - - - |
+| - - - - - - - H |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
+  | - - - - - - - - |
++ | - - - - M - - - |
+- | - - - - - - - - |
+?                 ^
+
++ | - - - - - - - H |
+?                 ^
+
+- | - - - - - - - - |
+  | P - - - - - - - |
+...
+
+The input for this test was:
+3
+-9 5 4
+2 6 7
+4 6 7
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -e '3\n-9 5 4\n2 6 7\n4 6 7' | ./cs_explorer
+Test 01_01_06_game_pieces_on_map_edge (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 16 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| B - - - - - - H |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - M |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
++ | B - - - - - - H |
+  | - - - - - - - - |
+  | - - - - - - - - |
+- | - - - - - - - - |
+- | P - - - - - - - |
+?                 ^
+
++ | P - - - - - - M |
+?                 ^
+
+...
+
+The input for this test was:
+3
+0 0 0
+3 0 7
+-6 7 7
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '3\n0 0 0\n3 0 7\n-6 7 7' | ./cs_explorer
+Test 01_01_07_no_game_pieces (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 16 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
+...
+
+The input for this test was:
+0
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n 0 | ./cs_explorer
+Test 01_02_01_three_types_of_pieces (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 36 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - H - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - M - - - - - |
+| P - - - - - B - |
+ -----------------
+
+EXPLORE!
+Enter command:  -----------------
+| - - - - - - - - |
+| - - - 7 - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - 9 - - - - - |
+| P - - - - - 0 - |
+ -----------------
+ -----------------
+| - - - - - - - - |
+| - - - H - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+...
+
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
++ | - - - - - - - - |
++ | - - - H - - - - |
+  | - - - - - - - - |
+  | - - - - - - - - |
++ | - - M - - - - - |
++ | P - - - - - B - |
++  -----------------
++ 
++ EXPLORE!
++ Enter command:  -----------------
++ | - - - - - - - - |
++ | - - - 7 - - - - |
+  | - - - - - - - - |
+  | - - - - - - - - |
+- | P - - - - - - - |
+?   --
+
++ | - - - - - - - - |
+?                 ++
+
++ | - - 9 - - - - - |
++ | P - - - - - 0 - |
+   -----------------
+- 
+- EXPLORE!
++  -----------------
++ | - - - - - - - - |
++ | - - - H - - - - |
++ | - - - - - - - - |
+
+The input for this test was:
+3
+-9 6 2
+0 7 6
+7 1 3
+c
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '3\n-9 6 2\n0 7 6\n7 1 3\nc' | ./cs_explorer
+Test 01_02_02_overlapping_pieces (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 36 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - M - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command:  -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - 9 - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - M - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+...
+
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
+  | - - - - - - - - |
+- | - - - - - - - - |
+?                 --
+
++ | - - - M - - - - |
+?         ++
+
+  EXPLORE!
++ Enter command:  -----------------
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - 9 - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | P - - - - - - - |
++  -----------------
++  -----------------
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - M - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | P - - - - - - - |
++  -----------------
+  Enter command: 
+
+The input for this test was:
+3
+0 3 3
+6 3 3
+-9 3 3
+c
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '3\n0 3 3\n6 3 3\n-9 3 3\nc' | ./cs_explorer
+Test 01_02_03_map_edges (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+
+The correct 36 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| M - - - - - - B |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - H |
+ -----------------
+
+EXPLORE!
+Enter command:  -----------------
+| 6 - - - - - - 0 |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - 3 |
+ -----------------
+ -----------------
+| M - - - - - - B |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+...
+
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
++ | M - - - - - - B |
+  | - - - - - - - - |
+  | - - - - - - - - |
+- | - - - - - - - - |
+- | P - - - - - - - |
+?                 ^
+
++ | P - - - - - - H |
+?                 ^
+
+  EXPLORE!
++ Enter command:  -----------------
++ | 6 - - - - - - 0 |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | P - - - - - - 3 |
++  -----------------
++  -----------------
++ | M - - - - - - B |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
++ | - - - - - - - - |
+
+The input for this test was:
+3
+-6 0 0
+0 0 7
+3 7 7
+c
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '3\n-6 0 0\n0 0 7\n3 7 7\nc' | ./cs_explorer
+Test 01_03_01_basic_quit (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+Last line of output above was not terminated with a newline('\n') character
+
+The correct 36 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - H |
+| - - - - - - - - |
+| - - - - B - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P M - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command:  -----------------
+| - - - - - - - - |
+| - - - - - - - 1 |
+| - - - - - - - - |
+| - - - - 0 - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P 6 - - - - - - |
+ -----------------
+ -----------------
+| - - - - - - - - |
+| - - - - - - - H |
+| - - - - - - - - |
+| - - - - B - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+...
+
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
++ | - - - - - - - - |
++ | - - - - - - - H |
++ | - - - - - - - - |
++ | - - - - B - - - |
+  | - - - - - - - - |
+  | - - - - - - - - |
++ | P M - - - - - - |
++  -----------------
++ 
++ EXPLORE!
++ Enter command:  -----------------
++ | - - - - - - - - |
++ | - - - - - - - 1 |
++ | - - - - - - - - |
++ | - - - - 0 - - - |
+  | - - - - - - - - |
+  | - - - - - - - - |
++ | P 6 - - - - - - |
++  -----------------
++  -----------------
+  | - - - - - - - - |
+- | P - - - - - - - |
+?   --
+
++ | - - - - - - - H |
+?                 ++
+
++ | - - - - - - - - |
++ | - - - - B - - - |
+
+The input for this test was:
+3
+-6 7 1
+1 1 7
+0 3 4
+c
+q
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '3\n-6 7 1\n1 1 7\n0 3 4\nc\nq' | ./cs_explorer
+Test 01_03_02_quit_no_pieces (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+Last line of output above was not terminated with a newline('\n') character
+
+The correct 16 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: Exiting Program!
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
+  EXPLORE!
+- Enter command: 
++ Enter command: Exiting Program!
+
+The input for this test was:
+0
+q
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '0\nq' | ./cs_explorer
+Test 01_03_03_quit_invalid_pieces (./cs_explorer) - failed (Incorrect output)
+Your program produced these 15 lines of output:
+Welcome Explorer!!
+How many game pieces are on the map?
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: 
+Last line of output above was not terminated with a newline('\n') character
+
+The correct 16 lines of output for this test were:
+Welcome Explorer!!
+How many game pieces are on the map?
+Enter the details of game pieces:
+ -----------------
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| - - - - - - - - |
+| P - - - - - - - |
+ -----------------
+
+EXPLORE!
+Enter command: Exiting Program!
+
+The difference between your output(-) and the correct output(+) is:
+...
+  How many game pieces are on the map?
++ Enter the details of game pieces:
+   -----------------
+  EXPLORE!
+- Enter command: 
++ Enter command: Exiting Program!
+
+The input for this test was:
+2
+-1 -1 -1 
+8 8 8
+q
+Note: last character in above input is not '\n'
+
+You can reproduce this test by executing these commands:
+  dcc -Werror -DNO_COLORS="no_colors" cs_explorer.c -o cs_explorer cs_explorer.c
+  echo -n -e '2\n-1 -1 -1 \n8 8 8\nq' | ./cs_explorer
+0 tests passed 13 tests failed
