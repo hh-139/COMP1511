@@ -54,9 +54,35 @@ int main(void) {
     printf("How many game pieces are on the map?\n");
     
     // TODO: Add code to scan in the number of game pieces here.
+    int num_pieces = -1;
+    scanf("%d", &num_pieces);
     
     // TODO: Add code to scan in the details of each game piece and place them
     //       on the map
+    int point = -1;
+    int row = -1;
+    int col = -1;
+    printf("Enter the details of game pieces:\n");
+    for (int i=0; i<num_pieces; ++i){
+        scanf("%d", &point);
+        scanf("%d", &row);
+        scanf("%d", &col);
+
+        if (-1<row<SIZE && -1<col<SIZE && -10<point<10){
+            if (!(row==SIZE-1 && col==0)){
+                if (point==0){
+                    map[row][col].occupier=BOULDER_TYPE;
+                }
+                else if (point<0){
+                    map[row][col].occupier=MONSTER_TYPE;
+                }
+                else{
+                    map[row][col].occupier=HEALING_TYPE;
+                }
+                map[row][col].points=point;
+            }
+        }
+    }
 
     // After the game pieces have been added to the map print out the map.
     print_game_play_map(map);
