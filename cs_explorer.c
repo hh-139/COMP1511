@@ -91,7 +91,7 @@ int main(void) {
 
     // TODO: keep scanning in commands from the user until the user presses
     // ctrl + d
-    char command='';
+    char command='.';
     while (command != 'q'){
         printf("Enter command: ");
         scanf(" %c", &command);
