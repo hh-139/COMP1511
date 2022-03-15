@@ -68,7 +68,7 @@ int main(void) {
         scanf("%d", &row);
         scanf("%d", &col);
 
-        if (-1<row<SIZE && -1<col<SIZE && -10<point<10){
+        if (row>-1 && row<SIZE && col>-1 && col<SIZE && point>-10 && point<10){
             if (!(row==SIZE-1 && col==0)){
                 if (point==0){
                     map[row][col].occupier=BOULDER_TYPE;
@@ -87,10 +87,19 @@ int main(void) {
     // After the game pieces have been added to the map print out the map.
     print_game_play_map(map);
     printf("\nEXPLORE!\n");
-    printf("Enter command: ");
+    // printf("Enter command: ");
 
     // TODO: keep scanning in commands from the user until the user presses
     // ctrl + d
+    char command='';
+    while (command != 'q'){
+        printf("Enter command: ");
+        scanf(" %c", &command);
+        if (command=='c'){
+            print_cheat_map(map);
+        }
+
+    }
     
     return 0;
 }
