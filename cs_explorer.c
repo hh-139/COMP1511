@@ -87,18 +87,17 @@ int main(void) {
     // After the game pieces have been added to the map print out the map.
     print_game_play_map(map);
     printf("\nEXPLORE!\n");
-    // printf("Enter command: ");
 
     // TODO: keep scanning in commands from the user until the user presses
     // ctrl + d
-    char command='.';
-    while (command != 'q'){
-        printf("Enter command: ");
-        scanf(" %c", &command);
+    char command;
+    printf("Enter command: ");
+    while (scanf(" %c", &command)==1){
         if (command=='c'){
             print_cheat_map(map);
         }
-
+        print_game_play_map(map);
+        printf("\nEnter command: ");
     }
     
     return 0;
