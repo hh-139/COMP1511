@@ -96,8 +96,12 @@ int main(void) {
         if (command=='c'){
             print_cheat_map(map);
         }
+        if (command=='q'){
+            printf("Exiting Program!\n");
+            return 0;
+        }
         print_game_play_map(map);
-        printf("\nEnter command: ");
+        printf("Enter command: ");
     }
     
     return 0;
