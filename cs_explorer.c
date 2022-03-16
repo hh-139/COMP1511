@@ -52,36 +52,34 @@ int main(void) {
 
     printf("Welcome Explorer!!\n");
     printf("How many game pieces are on the map?\n");
-    
+
     // TODO: Add code to scan in the number of game pieces here.
     int num_pieces = -1;
     scanf("%d", &num_pieces);
-    
+
     // TODO: Add code to scan in the details of each game piece and place them
     //       on the map
     int point = -1;
     int row = -1;
     int col = -1;
     printf("Enter the details of game pieces:\n");
-    for (int i=0; i<num_pieces; ++i) {
+    for (int i = 0; i < num_pieces; ++i) {
         scanf("%d", &point);
         scanf("%d", &row);
         scanf("%d", &col);
 
-        if (row>-1 && row<SIZE &&  && ) {
-            if (col>-1 && col<SIZE) {
-                if (point>-10 && point<10) {
-                    if (!(row==SIZE-1 && col==0)) {
-                        if (point==0) {
+        if (row > -1 && row < SIZE) {
+            if (col > -1 && col < SIZE) {
+                if (point > -10 && point < 10) {
+                    if (!(row == SIZE - 1 && col == 0)) {
+                        if (point == 0) {
                             map[row][col].occupier = BOULDER_TYPE;
-                        }
-                        else if (point<0) {
+                        } else if (point < 0) {
                             map[row][col].occupier = MONSTER_TYPE;
-                        }
-                        else {
+                        } else {
                             map[row][col].occupier = HEALING_TYPE;
                         }
-                        map[row][col].points=point;
+                        map[row][col].points = point;
                     }
                 }
             }
@@ -96,18 +94,18 @@ int main(void) {
     // ctrl + d
     char command;
     printf("Enter command: ");
-    while (scanf(" %c", &command)==1) {
-        if (command=='c'){
+    while (scanf(" %c", &command) == 1) {
+        if (command == 'c') {
             print_cheat_map(map);
         }
-        if (command=='q'){
+        if (command == 'q') {
             printf("Exiting Program!\n");
             return 0;
         }
         print_game_play_map(map);
         printf("Enter command: ");
     }
-    
+
     return 0;
 }
 
