@@ -63,23 +63,27 @@ int main(void) {
     int row = -1;
     int col = -1;
     printf("Enter the details of game pieces:\n");
-    for (int i=0; i<num_pieces; ++i){
+    for (int i=0; i<num_pieces; ++i) {
         scanf("%d", &point);
         scanf("%d", &row);
         scanf("%d", &col);
 
-        if (row>-1 && row<SIZE && col>-1 && col<SIZE && point>-10 && point<10){
-            if (!(row==SIZE-1 && col==0)){
-                if (point==0){
-                    map[row][col].occupier=BOULDER_TYPE;
+        if (row>-1 && row<SIZE &&  && ) {
+            if (col>-1 && col<SIZE) {
+                if (point>-10 && point<10) {
+                    if (!(row==SIZE-1 && col==0)) {
+                        if (point==0) {
+                            map[row][col].occupier = BOULDER_TYPE;
+                        }
+                        else if (point<0) {
+                            map[row][col].occupier = MONSTER_TYPE;
+                        }
+                        else {
+                            map[row][col].occupier = HEALING_TYPE;
+                        }
+                        map[row][col].points=point;
+                    }
                 }
-                else if (point<0){
-                    map[row][col].occupier=MONSTER_TYPE;
-                }
-                else{
-                    map[row][col].occupier=HEALING_TYPE;
-                }
-                map[row][col].points=point;
             }
         }
     }
@@ -92,7 +96,7 @@ int main(void) {
     // ctrl + d
     char command;
     printf("Enter command: ");
-    while (scanf(" %c", &command)==1){
+    while (scanf(" %c", &command)==1) {
         if (command=='c'){
             print_cheat_map(map);
         }
